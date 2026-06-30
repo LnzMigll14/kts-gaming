@@ -1,0 +1,12 @@
+# OS generated files (System junk you don't need to track)
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Code editor configurations
+.vscode/
+.idea/
+
+# Optional: Large asset zip files or backups if you keep them locally
+*.zip
+*.tar

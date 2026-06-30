@@ -1,0 +1,302 @@
+<!-- Declares the document type as modern HTML5 -->
+<!doctype html>
+<!-- Opens the HTML document and sets the primary language to English -->
+<html lang="en">
+  <!-- Contains metadata, SEO details, font links, and external style sheets -->
+  <head>
+    <!-- Sets character encoding to UTF-8 to support almost all text characters and symbols -->
+    <meta charset="UTF-8" />
+    <!-- Ensures proper responsive rendering and scaling across mobile, tablet, and desktop devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Sets the text that appears on the browser tab -->
+    <title>KTS Gaming</title>
+    <!-- Links your custom external CSS stylesheet to style the layout -->
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Fetches Space Grotesk (headings) and JetBrains Mono (tech text) font families from Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Links the Font Awesome icon library to render the TikTok logo glyph -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <!-- Closes the metadata head block -->
+  </head>
+
+  <!-- Begins the visible window content of your web page -->
+  <body>
+    <!-- Defines the top global header navigation bar; sticky-positioned via CSS -->
+    <nav class="site-header">
+      <!-- Displays the primary brand textual logo -->
+      <div class="site-logo">KTSGaming</div>
+
+      <!-- An unordered list grouping your primary site section navigation links -->
+      <ul class="site-nav">
+        <!-- Navigation item linking down to the #gear anchor ID section -->
+        <li><a href="#gear">Gear</a></li>
+        <!-- Navigation item linking down to the #settings anchor ID section -->
+        <li><a href="#settings">Settings</a></li>
+        <!-- Navigation item linking down to the #profiles anchor ID section -->
+        <li><a href="#profiles">Profiles</a></li>
+        <!-- Closes the navigation list element -->
+      </ul>
+
+      <!-- Wrapper container isolating the right-side header button layout -->
+      <div class="header-action">
+        <!-- Hyperlink designed to style as a structural call-to-action button -->
+        <a href="#contact" class="header-action__btn">Contact</a>
+      </div>
+      <!-- Closes the top navigation block -->
+    </nav>
+
+    <!-- Defines the prominent high-impact hero introduction layout at the top of the page -->
+    <section class="hero-section">
+      <!-- Empty utility element styled in CSS to overlay a retro grid-pattern matrix -->
+      <div class="hero-grid"></div>
+      <!-- Empty utility element styled in CSS to project a soft, ambient orange glowing orb effect -->
+      <div class="hero-glow"></div>
+
+      <!-- Inner layout container wrapping text elements to keep them safe above background layers -->
+      <div class="hero-section__inner">
+        <!-- Flexbox row displaying modern badge layout micro-tags -->
+        <div class="hero-tags">
+          <!-- Text badge labeling your gaming profile focus -->
+          <span class="hero-tag">CS2 Player</span>
+          <!-- Customized text badge using a modifier class to style specific Kick green borders -->
+          <span class="hero-tag hero-tag--kick">Streamer on Kick</span>
+          <!-- Text badge labeling your content creation schedule -->
+          <span class="hero-tag">TikTok Creator</span>
+        </div>
+
+        <!-- The main high-impact heading of the website split across breaks -->
+        <h1 class="hero-section__title">
+          CASUAL<br />
+          <!-- Lightly-colored typographic emphasis word via a utility class -->
+          <span class="hero-section__muted">NOT</span>
+          <!-- Lightly-colored typographic emphasis word via a utility class -->
+          <span class="hero-section__muted">PRO.</span>
+        </h1>
+
+        <!-- The introductory paragraph outlining the mission statement of your stream -->
+        <p class="hero-section__description">
+          Just a guy grinding ranked and posting clips. Streams on Kick. TikToks
+          daily. All gear and settings listed — no gatekeeping.
+        </p>
+
+        <!-- Container grouping the main button elements side-by-side using flexbox -->
+        <div class="hero-actions">
+          <!-- Main Kick brand button that anchors directly to your live streaming page -->
+          <a href="#" class="button button--kick">
+            <!-- References your custom local image icon file for the Kick logo -->
+            <img
+              src="/Assets/kick-icon.jpeg"
+              class="kick-icon"
+              alt="Kick Logo"
+            />
+            Follow on Kick ↗
+          </a>
+          <!-- TikTok brand link button carrying the Font Awesome vector icon package -->
+          <a href="#" class="button button--tiktok">
+            <!-- Injects the official TikTok glyph structure directly from Font Awesome -->
+            <i class="fa-brands fa-tiktok"></i> TikTok ↗
+          </a>
+          <!-- Minimalist text-arrow hyperlink pointing down towards setup configs -->
+          <a href="#settings" class="button button--link">View Settings →</a>
+        </div>
+      </div>
+      <!-- Closes the hero section component -->
+    </section>
+
+    <!-- Content section displaying your streaming physical inventory setup layout -->
+    <section class="section-container" id="gear">
+      <!-- Technical text label centered above the main structural category title -->
+      <div class="section-label">My Setup</div>
+      <!-- Primary header tag indicating the section content focus -->
+      <h2>My Personal Gears</h2>
+
+      <!-- Flexbox/Grid wrapper containing your dynamic portfolio product card components -->
+      <div class="gear-list">
+        <!-- CARD 1 START: Interactive hyperlink wrapper shaping the entire card block area -->
+        <a href="#" class="gear-item">
+          <!-- Isolated high-contrast white layout box housing the product graphic -->
+          <div class="gear-item__image">
+            <!-- Displays the source image asset representing your laptop machine -->
+            <img
+              src="/Assets/acer-predator-helios-300-ph315-55-76d8-gaming-laptop-laptop-tiangge-acer-laptop-gigahertz-595430.png"
+              alt="Acer Predator Helios 300"
+            />
+          </div>
+          <!-- Info container layer dividing the text components from the graphic block -->
+          <div class="gear-item__content">
+            <!-- Flexible row organizing the textual name alongside an interactive icon -->
+            <div class="gear-item__header">
+              <!-- Item product title -->
+              <h3>Acer Predator Helios 300</h3>
+              <!-- Vector pointing arrow icon that visually responds when hovering the card -->
+              <svg class="gear-item__icon" viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M7 17L17 7M9 7h8v8"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+              </svg>
+            </div>
+            <!-- Descriptive text highlighting technical real-world utility of the tool -->
+            <p>
+              Core i5, RTX 30-Series, and an ultra-fast refresh panel. Locked in
+              for maximum frame stability during streams.
+            </p>
+          </div>
+        </a>
+
+        <!-- CARD 2 START: Mouse hardware card element -->
+        <a href="#" class="gear-item">
+          <div class="gear-item__image">
+            <!-- Displays the source image representing your competitive mouse asset -->
+            <img src="/Assets/vxe_r1_pro_mouse.png" alt="VXE R1 Pro" />
+          </div>
+          <div class="gear-item__content">
+            <div class="gear-item__header">
+              <h3>VXE R1 Pro</h3>
+              <svg class="gear-item__icon" viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M7 17L17 7M9 7h8v8"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+              </svg>
+            </div>
+            <p>
+              Superlight 48g competitive shape. Packed with a flagship PixArt
+              PAW3395 optical sensor and 4K polling rate support.
+            </p>
+          </div>
+        </a>
+
+        <!-- CARD 3 START: Keyboard peripheral card element -->
+        <a href="#" class="gear-item">
+          <div class="gear-item__image">
+            <!-- Displays the source image representing your custom mechanical keyboard asset -->
+            <img
+              src="/Assets/epomaker-x-aula-f75-tri-mode-rgb-mechanical-keyboard---light-blue_2.png"
+              alt="Epomaker X Aula F75"
+            />
+          </div>
+          <div class="gear-item__content">
+            <div class="gear-item__header">
+              <h3>Epomaker X Aula F75</h3>
+              <svg class="gear-item__icon" viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M7 17L17 7M9 7h8v8"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+              </svg>
+            </div>
+            <p>
+              Gasket-mounted 75% hot-swappable mechanical board. Smooth,
+              pre-lubed linear switches and a flex-cut leaf-spring PCB layout.
+            </p>
+          </div>
+        </a>
+
+        <!-- CARD 4 START: Tracking surface mat card element -->
+        <a href="#" class="gear-item">
+          <div class="gear-item__image">
+            <!-- Displays the source image representing your mousepad tracking sheet -->
+            <img src="/Assets/QCK+.png" alt="Steelseries QCK+" />
+          </div>
+          <div class="gear-item__content">
+            <div class="gear-item__header">
+              <h3>Steelseries QCK+ Mousepad</h3>
+              <svg class="gear-item__icon" viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M7 17L17 7M9 7h8v8"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+              </svg>
+            </div>
+            <p>
+              Legendary micro-woven cloth texture. Extra thick padding offers
+              perfect friction profiles for precise CS2 tactical sprays.
+            </p>
+          </div>
+        </a>
+
+        <!-- CARD 5 START: Display panel monitor card element -->
+        <a href="#" class="gear-item">
+          <div class="gear-item__image">
+            <!-- Displays the source image asset representing your high-speed display panel -->
+            <img
+              src="/Assets/aoc_27g11e71_27_gaming_monitor_blackred_.jpg"
+              alt="AOC 27G11E71"
+            />
+          </div>
+          <div class="gear-item__content">
+            <div class="gear-item__header">
+              <h3>AOC 27G11E71 - 240Hz</h3>
+              <svg class="gear-item__icon" viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M7 17L17 7M9 7h8v8"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+              </svg>
+            </div>
+            <p>
+              Blazing fast 240Hz refresh rate combined with sub-millisecond
+              response times. Absolute motion clarity for peeking angles.
+            </p>
+          </div>
+        </a>
+
+        <!-- CARD 6 START: Table workplace support matrix card element -->
+        <a href="#" class="gear-item">
+          <div class="gear-item__image">
+            <!-- Displays the source image representing your structural gaming desk -->
+            <img
+              src="/Assets/2a612c5d59261953273bebd2f37719dc.jpg"
+              alt="Inplay TK-201 Gaming Table"
+            />
+          </div>
+          <div class="gear-item__content">
+            <div class="gear-item__header">
+              <h3>Inplay TK-201 Gaming Table</h3>
+              <svg class="gear-item__icon" viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M7 17L17 7M9 7h8v8"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+              </svg>
+            </div>
+            <p>
+              Rock-solid structural design featuring a carbon fiber textured top
+              layer. Built with heavy-duty K-legs to minimize monitor shake.
+            </p>
+          </div>
+        </a>
+
+        <!-- Closes the product card bento grid wrapper -->
+      </div>
+      <!-- Closes the global section viewport container -->
+    </section>
+    <!-- Closes the visible page content window framework -->
+  </body>
+  <!-- Closes the html file completely -->
+</html>

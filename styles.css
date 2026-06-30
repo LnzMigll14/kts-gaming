@@ -1,0 +1,424 @@
+/* ==========================================================================
+   1. GLOBAL VARIABLES & RESET
+   ========================================================================== */
+/* The :root selector houses your global variables accessible throughout your stylesheet */
+:root {
+  --bg: #090909;                     /* Deep velvet midnight pitch black background */
+  --s1: #101010;                     /* Slightly lighter slate shade for subtle element separations */
+  --s2: #151515;                     /* Secondary surface tint used on cards or inner blocks */
+  --b: #1C1C1C;                      /* Clean dark border stroke baseline parameter */
+  --bh: rgba(255, 94, 28, .3);       /* Translucent glowing accent background mask */
+  --ac: #FF5E1C;                     /* Neon signature blazing orange brand accent tint */
+  --at: #FF9860;                     /* Soft cream-orange text variant for highlights */
+  --t: #EBEBEB;                      /* Crisp bright off-white reading text color */
+  --tm: #555555;                     /* Muted neutral grey accent for labels and secondary phrases */
+  --td: #242424;                     /* Heavy dark onyx fill reserved for extreme title text muting */
+  --kick: #53FC18;                   /* Vibrant official fluorescent bright Kick platform brand green */
+  --g: #22C55E;                      /* Traditional soft emerald alert confirmation success color */
+  --r: #EF4444;                      /* High-alert sharp crimson danger error status indicator */
+}
+
+/* The universal selector targeting every single DOM element on the web page */
+* {
+  box-sizing: border-box;            /* Integrates item borders and interior paddings neatly inside their widths */
+  margin: 0;                         /* Completely wipes out default browser margin gaps */
+  padding: 0;                        /* Completely wipes out default browser padding spacings */
+}
+
+/* Base level styling properties applied to the main scroll container window */
+html {
+  scroll-behavior: smooth;           /* Animates view tracking transitions smoothly when clicking anchor links */
+}
+
+/* Global viewport fallback body adjustments */
+body {
+  background: var(--bg);             /* Fills your overall screen space canvas with your pitch dark asset variable */
+  color: var(--t);                   /* Paints system text globally using your crisp high-visibility layout off-white */
+  font-family: 'Space Grotesk', sans-serif; /* Sets primary geometric sans-serif typeface structure */
+  overflow-x: hidden;                /* Strict security measure eliminating awkward accidental side-to-side page shifting */
+  line-height: 1.5;                  /* Loosens sentence heights up vertically to prevent reading strain */
+}
+
+/* ==========================================================================
+   2. HEADER & NAVIGATION
+   ========================================================================== */
+/* The main top navigation container tracking across page scrolls */
+.site-header {
+  position: sticky;                  /* Glues the navigation bar securely down relative to the top window frame */
+  top: 0;                            /* Pin coordinates set directly at the very top edge boundary */
+  z-index: 100;                      /* Higher priority layer stacking integer guaranteeing header floats over cards */
+  display: flex;                     /* Converts header structure to Flexbox layout models */
+  justify-content: space-between;    /* Spreads elements evenly (Logo left, Nav center, Button right) */
+  align-items: center;               /* Sets centered horizontal line alignment for all items in the row */
+  padding: 0 60px;                   /* Generates a generous 60px inside spacing wall on the left and right flanks */
+  height: 60px;                      /* Restricts the total maximum vertical box metric thickness of your header */
+  border-bottom: 1px solid var(--s1);/* Draws a razor-thin structural line directly underneath the navigation bar */
+  background: rgba(9, 9, 9, .94);    /* Translucent dark ink backing color to allow content blending */
+  backdrop-filter: blur(12px);       /* Renders standard blurred glass layer effect over underlying page text */
+}
+
+/* The left-anchored textual brand logo mark styling */
+.site-logo {
+  font-family: 'JetBrains Mono', monospace; /* Applies developer monospace tech font to give game developer vibes */
+  font-size: 25px;                   /* Expands corporate text sizing footprint scale */
+  font-weight: 700;                  /* Implements bold structural presentation */
+  letter-spacing: .18em;             /* Spreads out text letters to maximize logo legibility */
+  text-transform: uppercase;         /* Transforms text layout output to force capitalize letters */
+  color: var(--ac);                  /* Paints corporate asset using your signature burning orange variable color */
+}
+
+/* Center link navigation list structure adjustments */
+.site-nav {
+  display: flex;                     /* Arranges child list points horizontally side by side */
+  gap: 24px;                         /* Generates a fixed grid distance wall between adjacent points */
+  list-style: none;                  /* Strips off standard ugly default bullet list dots */
+}
+
+/* Text links hidden within navigation list items */
+.site-nav a {
+  color: var(--tm);                  /* Colors text standard neutral muted gray to drop initial attention weight */
+  text-decoration: none;             /* Cleans off standard classic anchor hyperlink text underlines */
+  font-size: 18px;                   /* Standardizes clear nav reading footprint heights */
+  font-weight: 500;                  /* Medium-bold stroke settings */
+  transition: color 0.2s ease;       /* Gracefully morphs color hues when standard mouse states interact */
+}
+
+/* Visual interaction trigger state when pointing at navigation text items */
+.site-nav a:hover {
+  color: var(--t);                   /* Illuminates navigation text back to crisp white layout status on mouse hover */
+}
+
+/* The right-anchored action button wrapper anchor profile */
+.header-action__btn {
+  color: var(--tm);                  /* Initial muted text appearance matching other standard components */
+  text-decoration: none;             /* Disables anchor hyperlink underlines */
+  font-size: 18px;                   /* Standardizes button text label scale */
+  padding: 8px 16px;                 /* Outer structural protective spacing perimeter molding the box dimensions */
+  border-radius: 4px;                /* Moderately shapes down hard box corners to deliver smooth edge curves */
+  background: var(--t);              /* Initially backgrounds the card using a stark inverted solid bright white fill */
+  transition: background 0.2s ease, color 0.2s ease; /* Seamlessly updates backgrounds and textual highlights on mouse hovers */
+}
+
+/* Mouse hover structural state adjustments targeting the action call header block */
+.header-action__btn:hover {
+  color: var(--t);                   /* Flips text layout visibility metrics to clear off-white status */
+  background: var(--ac);             /* Snaps background fills completely into blazing orange focus profiles */
+}
+
+/* ==========================================================================
+   3. HERO SECTION
+   ========================================================================== */
+/* Full screen entry section block framework scaling definitions */
+.hero-section {
+  padding: 100px 48px 88px;          /* Balanced padding allocation preventing layout content from touching screens */
+  position: relative;                /* Grants absolute sub-elements strict anchor boundaries to lock inside */
+  overflow: hidden;                  /* Crops out oversize graphical background elements safely from crashing layouts */
+  min-height: 92vh;                  /* Forces section block heights to span across 92% of the total screen space */
+  display: flex;                     /* Invokes flexbox mechanics */
+  align-items: flex-end;             /* Drops content group vertically right onto the lower baseline floor area */
+}
+
+/* Background overlay generating structural tech layout matrix grids */
+.hero-grid {
+  position: absolute;                /* Detaches element boundaries entirely from normal page rendering structures */
+  inset: 0;                          /* Pin commands locking layer vectors out completely across all four corners */
+  background-image: 
+    linear-gradient(var(--b) 1px, transparent 1px),      /* Renders horizontal grid wires tracking across views */
+    linear-gradient(90deg, var(--b) 1px, transparent 1px);/* Renders intersecting vertical grid lines crossing planes */
+  background-size: 72px 72px;        /* Dictates block dimensions making up your grid squares */
+  mask-image: radial-gradient(ellipse 90% 85% at 15% 65%, black 10%, transparent 72%); /* Softly fades out grids towards screen edges */
+  opacity: .55;                      /* Reduces raw intensity to keep background details elegant and non-distracting */
+  z-index: 1;                        /* Places matrix patterns safely behind interactive foreground text stacks */
+}
+
+/* Floating orange atmospheric background glow bubble */
+.hero-glow {
+  position: absolute;                /* Independent layer floating mechanics asset assignment */
+  width: 760px;                      /* Absolute shape horizontal space scale dimensions */
+  height: 520px;                     /* Absolute shape vertical space scale dimensions */
+  border-radius: 50%;                /* Softens boundaries into perfect circular ellipse profiles */
+  background: radial-gradient(ellipse, rgba(255, 94, 28, .055), transparent 65%); /* Projects ultra-smooth orange light bleeding outer gradients */
+  bottom: -120px;                    /* bleeds shape down below lower baseline grid coordinates */
+  left: -160px;                      /* bleeds layout out past left screen window coordinates */
+  z-index: 1;                        /* Layer values backing objects behind critical body text tags */
+}
+
+/* The textual component containment block guarding content safe zones */
+.hero-section__inner {
+  position: relative;                /* Standard baseline layering wrapper setup specifications */
+  max-width: 1060px;                 /* Halts text expansion past optimal line limits */
+  margin: 0 auto;                    /* Completely centers the layout area inside your monitor workspace grids */
+  width: 100%;                       /* Fluctuates scales dynamically to fill variable screen boundaries */
+  z-index: 2;                        /* Forces all textual items above ambient glowing orb objects so links stay clickable */
+}
+
+/* Horizontal organization wrapper keeping badges organized */
+.hero-tags {
+  display: flex;                     /* Places layout badge capsules in standard uniform row vectors */
+  gap: 12px;                         /* Controls space separating individual tag items */
+  flex-wrap: wrap;                   /* Permits elements to snap down onto sub lines gracefully on smaller phones */
+  margin-bottom: 24px;               /* Pushes main large heading block down away from label blocks */
+}
+
+/* Micro metadata pill label capsule formatting styling */
+.hero-tag {
+  font-family: 'JetBrains Mono', monospace; /* Monospace typography enforcing cyber engineering aesthetic rules */
+  font-size: 14px;                   /* Legible tracking label sizes */
+  letter-spacing: .15em;             /* Increases character distance for structured sub-text presentation labels */
+  text-transform: uppercase;         /* Capitalizes structural lettering tags */
+  padding: 4px 8px;                  /* Snug inside perimeter spacing shaping corporate capsule parameters */
+  border-radius: 4px;                /* Clean uniform layout corner framing properties */
+  border: 1px solid rgba(255, 94, 28, .28); /* Translucent signature crisp orange hairline container boundaries */
+  color: var(--ac);                  /* Sets label color variables to primary orange visibility parameters */
+}
+
+/* Modifier class targeting custom platform streamer badge properties exclusively */
+.hero-tag--kick {
+  border-color: rgba(83, 252, 24, .28); /* Sets hairline container border color metrics to soft Kick green translucent values */
+  color: var(--kick);                /* Ignites label text colors using official fluorescent Kick green styles */
+}
+
+/* Extreme scale title word heading properties block */
+.hero-section__title {
+  font-size: clamp(68px, 11vw, 126px); /* Fluid typography formulas (Min 68px, Scaled 11vw, Max 126px) */
+  font-weight: 700;                  /* Heavy display weight profiles maximizing page presence architectures */
+  letter-spacing: -.035em;           /* Squeezes letters slightly closer together to lock structural headline visuals */
+  line-height: .9;                   /* Heavy sentence collapse preventing gap anomalies between massive broken words */
+  margin-bottom: 20px;               /* Generates layout breathing space right above description text points */
+}
+
+/* Utility modifier darkening secondary words inside massive headings down into stealth states */
+.hero-section__muted {
+  color: var(--td);                  /* Dips target lettering directly into stealth obsidian gray profiles */
+}
+
+/* The secondary structural body block description text rules */
+.hero-section__description {
+  font-size: 15px;                   /* Crisp base paragraph reading scales */
+  color: var(--tm);                  /* Settles textual reading layouts into standard soft muted slate gray */
+  line-height: 1.65;                 /* Increases breathing space height between reading lines for text readability */
+  max-width: 400px;                  /* Strict horizontal bounds layout stops forcing clean line wrap breaks */
+  margin-bottom: 36px;               /* Pushes downstream button groups down away from text blocks */
+}
+
+/* Row wrapper formatting utility keeping macro buttons neatly sorted */
+.hero-actions {
+  display: flex;                     /* Rows action nodes gracefully across standard grid planes */
+  gap: 16px;                         /* Spacing block distance inserted between individual buttons */
+  flex-wrap: wrap;                   /* Allows smaller screens to roll buttons onto second layers smoothly */
+}
+
+/* The overarching master button framework baseline architectural model rule */
+.button {
+  display: inline-flex;              /* Invokes flexbox while forcing container block structures to respect flow baselines */
+  align-items: center;               /* Sets centered horizontal line alignment for items inside the button container box */
+  padding: 11px 22px;                /* Perfectly scaled outer protection perimeter molding action call assets */
+  text-decoration: none;             /* Disables anchor hyperlink lines */
+  text-transform: uppercase;         /* Enforces capitalization behaviors to mirror structural esports brand elements */
+  border-radius: 4px;                /* Sharp box smoothing parameter values */
+  font-weight: 600;                  /* Pronounced text stroke parameters prioritizing action items */
+  transition: all 0.2s ease;         /* Tracks overall attribute adjustments smoothly across variable animation frames */
+}
+
+/* Custom platform coloring rules targeting Kick components */
+.button--kick {
+  background: var(--kick);           /* Surfaces button blocks fully inside trademark Kick fluorescent green */
+  color: #000000;                    /* High contrast void black text color profile ensuring maximum visibility */
+}
+
+/* Formats custom image assets nested within active Kick button environments */
+.button--kick .kick-icon {
+  width: 16px;                       /* Locks absolute pixel width footprints */
+  height: 16px;                      /* Locks absolute pixel height dimensions */
+  object-fit: contain;               /* Protects image proportions from stretching or morphing anomalies */
+  margin-right: 8px;                 /* Generates fixed breathing distance spacing directly to the right of graphics */
+  flex-shrink: 0;                    /* Denies browsers rights to warp or squeeze image footprints on small sizes */
+}
+
+/* Visual interaction trigger state when hovering over Kick actions */
+.button--kick:hover {
+  opacity: 0.9;                      /* Mild opacity adjustment letting background tones gently blend into the button */
+}
+
+/* Custom layout formatting rules targeting TikTok components */
+.button--tiktok {
+  border: 1px solid var(--b);        /* Standardizes minimal muted border outline framing designs */
+  color: var(--t);                   /* Paints typography using clear crisp off-white parameters */
+}
+
+/* Target control structural rule modifying internal Font Awesome TikTok glyphs */
+.button--tiktok .fa-tiktok {
+  margin-right: 8px;                 /* Generates fixed structural spacing wall directly before title text phrases */
+}
+
+/* Visual hover adjustments targeting customized TikTok action nodes */
+.button--tiktok:hover {
+  background: var(--s1);             /* Shifts background panel canvas over to slightly lighter dark slate profiles */
+  border-color: var(--tm);           /* Brightens up perimeter boundary hairlines to draw eye focus points */
+}
+
+/* Stylized textual link button configurations */
+.button--link {
+  color: var(--tm);                  /* Subdued slate initial color profile layout setups */
+}
+
+/* Visual hover parameters targeting custom link style elements */
+.button--link:hover {
+  color: var(--t);                   /* Snaps text color to full brightness upon active cursor intersections */
+}
+
+/* ==========================================================================
+   4. CONTENT GLOBAL LAYOUT STRUCTURE
+   ========================================================================== */
+/* Reusable global section box layout controller framework */
+.section-container {
+  width: 100%;                       /* Permits containers to absorb maximum fluid space environments dynamically */
+  max-width: 1100px;                 /* Firm structural layout stop blocking layout growth on ultra-wide screens */
+  margin: auto;                      /* Fully clusters sections straight down center lines of desktop workspaces */
+  padding: 4rem 2rem;                /* Heavy multi-unit macro breathing boundaries wrapping core setup spaces */
+}
+
+/* Technical system category labeling formatting rules */
+.section-label {
+  font-family: 'JetBrains Mono', monospace; /* Technical monospace font enforcing precise configuration file aesthetics */
+  font-size: 14px;                   /* Crisp micro detail formatting size parameters */
+  letter-spacing: .22em;             /* Extreme character spread maximizing technical indexing layout presence */
+  text-transform: uppercase;         /* Enforces capitalization attributes across target labeling assets */
+  color: var(--ac);                  /* Sets color maps over to high visibility burning orange profile lines */
+  margin-bottom: 1.5rem;             /* Dictates clear downward padding pushing layout headings down away from labels */
+  display: flex;                     /* Flex rows label text along with ornamental vector additions */
+  align-items: center;               /* Perfectly aligns the text and the line on a central level plane */
+  gap: 10px;                         /* Spacing block inserted between label text and the line decoration */
+}
+
+/* Ornamental trailing design line trailing your technical labels */
+.section-label::after {
+  content: '';                       /* Generates a virtual element block framework without text requirements */
+  display: block;                    /* Dictates standard element block rendering mechanics */
+  width: 28px;                       /* Fixed micro width line dimensions */
+  height: 1px;                       /* Razor thin line thickness mapping rules */
+  background: rgba(255, 94, 28, .35);/* Translucent orange tone extending elegantly from text fields */
+}
+
+/* Global H2 section title configuration variables */
+h2 {
+  font-size: clamp(28px, 4vw, 44px);  /* Smooth size scaling parameters (Min 28px, Scaled 4vw, Max 44px) */
+  font-weight: 700;                  /* Rigid heavy geometric emphasis profiles */
+  letter-spacing: -.02em;            /* Squeezes text tracking vectors slightly for optimized structural layouts */
+  line-height: 1.1;                  /* Tight line height to ensure short title blocks present cleanly */
+  margin-bottom: 40px;               /* Large layout space separating headers from portfolio content cards */
+}
+
+/* ==========================================================================
+   5. REFACTORED GEAR GRID COMPONENT
+   ========================================================================== */
+/* Multi-column grid system housing item layout data objects */
+.gear-list {
+  display: grid;                     /* Invokes native CSS Grid architecture components */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive formula creating columns dynamically without media queries */
+  gap: 20px;                         /* Uniform spacing separation gutter paths wrapping all internal layout grids */
+}
+
+/* Individual Portfolio Card Structure Components */
+.gear-item {
+  display: flex;                     /* Activates internal flexible grid architecture processes */
+  flex-direction: column;            /* Stacks image canvas modules and info description rows vertically */
+  background: #111112;               /* Deep charcoal dark matte premium carbon aesthetic fill */
+  border: 1px solid #1f1f22;         /* Fine low-contrast charcoal edge outline tracking container perimeters */
+  border-radius: 16px;               /* Modern smooth corner rounding configurations shaping layout parameters */
+  padding: 30px;                     /* Uniform protective cushion wall boxing nested assets comfortably inside */
+  text-decoration: none;             /* Erases underlying hyperlink anchor indicators across all structural text fields */
+  transition: transform 0.25s ease, border-color 0.25s ease; /* Tracks position shifts and color fades during pointer interactions */
+}
+
+/* Interaction hover configurations targeting active gear item card frames */
+.gear-item:hover {
+  border-color: #333336;             /* Illuminates border outline value scales to show physical selection highlights */
+  transform: translateY(-4px);       /* Smoothly lifts target cards up by 4px on screens to create depth response */
+}
+
+/* High contrast isolated presentation boxes holding product photography assets */
+.gear-item__image {
+  display: flex;                     /* Invokes flexible centering row processes inside picture boxes */
+  aspect-ratio: 1 / 1;               /* Strict aspect ratio formula forcing card photos into perfect squares across dynamic grid shifts */
+  align-items: center;               /* Vertically aligns images straight down center coordinates */
+  justify-content: center;           /* Horizontally centers product pictures straight down center axes */
+  background: #ffffff;               /* Crisp pure studio white backdrop canvas rendering technical details flawlessly */               /* Soft corner molding applied right to image framing parameters */
+  padding: 33px;                     /* Deep studio margin spacing wrapping inner equipment items beautifully */
+  overflow: hidden;                  /* Enforces strict clip masks so zoom actions never bleed past boundaries */
+}
+
+/* Underlying product image items within frame configurations */
+.gear-item__image img {
+  max-width: 100%;                   /* Halts graphic stretching past standard horizontal box bounds */
+  max-height: 100%;                  /* Halts graphic stretching past standard vertical box limits */
+  object-fit: contain;               /* CRITICAL: Enforces secure ratio containment boxing so gear pictures are never cut off */
+  transition: transform 0.3s ease;   /* Orchestrates micro-bounce zoom tracking variables smoothly */
+}
+
+/* Micro interaction zoom triggers targeting active product images */
+.gear-item:hover .gear-item__image img {
+  transform: scale(1.03);            /* Bounces product equipment up by 3% in physical scale when mouse highlights cards */
+}
+
+/* Card metadata informational container layer blocks */
+.gear-item__content {
+  margin-top: 16px;                  /* Downward breathing distance gap separating text rows from white display frames */
+  padding: 16px 4px 0 4px;           /* Added 16px top padding to generate text breathing room directly under our custom line */
+  position: relative;                /* CRITICAL: Establishes context boundary tracking coordinates for our absolute line layout */
+}
+
+/* THE ZERO LAYOUT-SPACE BORDER LINE
+   Creates a floating divider using a pseudo-element. Absolute positioning 
+   removes it completely from the box-model document flow, ensuring it renders
+   without occupying space or throwing card layouts off by a single pixel. */
+.gear-item__content::before {
+  content: '';                       /* Generates structural layout canvas without typing visible text data */
+  position: absolute;                /* Detaches borders fully from standard flow so they occupy ZERO document space layout grids */
+  top: 0;                            /* Pins line coordinates straight along the absolute upper ceiling of the text container box */
+  left: 4px;                         /* Keeps line edges beautifully aligned with text paddings on left sides */
+  right: 4px;                        /* Keeps line edges beautifully aligned with text paddings on right sides */
+  height: 1px;                       /* Locks custom line vertical thickness variables precisely to a crisp single pixel */
+  background: #1f1f22;               /* Standard charcoal gray accent paint blending line elegantly with card frames */
+}
+
+/* Horizontal metadata formatting wrapper blocks */
+.gear-item__header {
+  display: flex;                     /* Rows layout headings alongside arrow vector icon links */
+  justify-content: space-between;    /* Pushes title text blocks left and tracking arrow symbols right */
+  align-items: flex-start;           /* Locks baseline alignment coordinates straight down upper margins */
+  gap: 8px;                          /* Anti-collision distance barrier stopping words from running straight into icon matrices */
+}
+
+/* Core item metadata description heading typography profiles */
+.gear-item__header h3 {
+  margin: 0;                         /* Disables heading paragraph layout overrides */
+  color: #ffffff;                    /* Pure white coloration forcing technical product names to pop vividly */
+  font-size: 15px;                   /* Clean refined grid header scale metrics */
+  font-weight: 600;                  /* Semi-bold structural text density definitions */
+  line-height: 1.3;                  /* Snug row height management tracking across long wrap paths */
+}
+
+/* Mini vector link tracking arrows inside header matrices */
+.gear-item__icon {
+  width: 14px;                       /* Fixed pixel layout widths */
+  height: 14px;                      /* Fixed pixel layout heights */
+  margin-top: 2px;                   /* Nudges vector arrows slightly lower down for optimized balance relative to text heights */
+  color: var(--tm);                  /* Colors links neutral slate gray initially to preserve text visibility balances */
+  flex-shrink: 0;                    /* Blocks structural browser compression mechanics from smashing vector layouts */
+  transition: transform 0.25s ease, color 0.25s ease; /* Tracks arrow shifts and color morphing animations concurrently */
+}
+
+/* Interaction tracking arrow response adjustments targeting active cards */
+.gear-item:hover .gear-item__icon {
+  transform: translate(3px, -3px);   /* Dynamic physics translation moving arrow elements out up-right along 45-degree vectors */
+  color: #ffffff;                    /* Snaps icon values into pure white brilliance states on active hovers */
+}
+
+/* Secondary portfolio equipment description text settings */
+.gear-item__content p {
+  margin: 4px 0 0 0;                 /* Tight top spacing context separating text from header names */
+  color: #8e8e93;                    /* Muted neutral institutional silver grey color profile maximizing system hierarchies */
+  font-size: 13px;                   /* Compact description layout reading scales */
+  line-height: 1.45;                 /* Breathable paragraph line spacing for effortless scannability */
+}
