@@ -297,6 +297,220 @@
       <!-- Closes the global section viewport container -->
     </section>
     <!-- Closes the visible page content window framework -->
+
+    <!-- Content section displaying the interactive in-game CS2 config panel -->
+    <section class="section-container" id="settings">
+      <!-- Technical text label centered above the main structural category title -->
+      <div class="section-label">Config</div>
+      <!-- Primary header tag indicating the section content focus -->
+      <h2>CS2 Settings</h2>
+      <!-- Outer card wrapper housing the whole tabbed settings widget -->
+      <div class="settings-panel">
+        <!-- Top bar of the widget holding the tab buttons and the version tag -->
+        <div class="stbar">
+          <!-- Row container for the individual tab buttons; relatively positioned so the slider can be absolutely placed inside it -->
+          <div class="stabs" style="position: relative">
+            <!-- The sliding block tracker -->
+            <!-- Empty div moved/resized via JS to visually highlight whichever tab is active -->
+            <div class="tab-slider"></div>
+
+            <!-- Tab button for the Mouse settings pane; "on" class marks it as the default active tab; data-t links it to its target pane's ID -->
+            <div class="stab on" data-t="t-mouse">Mouse</div>
+            <!-- Tab button for the Video settings pane -->
+            <div class="stab" data-t="t-video">Video</div>
+            <!-- Tab button for the Crosshair settings pane -->
+            <div class="stab" data-t="t-xhair">Crosshair</div>
+            <!-- Tab button for the Launch Options settings pane -->
+            <div class="stab" data-t="t-launch">Launch Options</div>
+          </div>
+          <!-- Small label showing the current game version, right-aligned in the top bar -->
+          <span class="cs2ver">CS2 - 2026</span>
+        </div>
+
+        <!-- Wrapper holding all of the individual tab content panes -->
+        <div class="s-body">
+          <!-- Mouse Settings -->
+          <!-- Content pane for the Mouse tab; "on" class keeps it visible by default -->
+          <div id="t-mouse" class="tcontent on">
+            <!-- Row grid laying out each individual setting item -->
+            <div class="srow">
+              <!-- Single setting entry pairing a label with its value -->
+              <div class="skitem">
+                <!-- Text label describing what the setting controls -->
+                <div class="sklabel">DPI</div>
+                <!-- The actual configured value for this setting -->
+                <div class="skvalue">800</div>
+              </div>
+
+              <div class="skitem">
+                <div class="sklabel">Sensitivity</div>
+                <div class="skvalue">1.25</div>
+              </div>
+
+              <div class="skitem">
+                <div class="sklabel">eDPI</div>
+                <div class="skvalue">1000</div>
+              </div>
+
+              <div class="skitem">
+                <div class="sklabel">Zoom Sens</div>
+                <div class="skvalue">1.00</div>
+              </div>
+
+              <div class="skitem">
+                <div class="sklabel">Raw Input</div>
+                <!-- "on-c" modifier class colors this value green to indicate an enabled state -->
+                <div class="skvalue on-c">On</div>
+              </div>
+
+              <div class="skitem">
+                <div class="sklabel">Mouse Acceleration</div>
+                <!-- "off-c" modifier class colors this value red/muted to indicate a disabled state -->
+                <div class="skvalue off-c">Off</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Video Settings -->
+          <!-- Content pane for the Video tab; hidden by default until its tab is clicked -->
+          <div id="t-video" class="tcontent">
+            <!-- First row of video-related setting items -->
+            <div class="srow">
+              <div class="skitem">
+                <div class="sklabel">Resolution</div>
+                <div class="skvalue">1280x960</div>
+              </div>
+              <div class="skitem">
+                <div class="sklabel">Aspect Ratio</div>
+                <!-- "sm" modifier class shrinks the font size to fit the longer text string -->
+                <div class="skvalue sm">4:3 Stretched</div>
+              </div>
+              <div class="skitem">
+                <div class="sklabel">Refresh Rate</div>
+                <div class="skvalue">
+                  <!-- Inline-styled unit suffix rendered smaller and more transparent than the number -->
+                  240<span style="font-size: 13px; opacity: 0.4">Hz</span>
+                </div>
+              </div>
+              <div class="skitem">
+                <div class="sklabel">V-Sync</div>
+                <div class="skvalue">OFF</div>
+              </div>
+            </div>
+
+            <!-- Empty utility element styled in CSS as a thin horizontal divider line between rows -->
+            <div class="sdiv"></div>
+
+            <!-- Second row of video-related setting items, separated visually from the first row -->
+            <div class="srow">
+              <div class="skitem">
+                <div class="sklabel">Textures</div>
+                <div class="skvalue">Low</div>
+              </div>
+              <div class="skitem">
+                <div class="sklabel">Shaders</div>
+                <div class="skvalue">Low</div>
+              </div>
+              <div class="skitem">
+                <div class="sklabel">Boost Player Contrast</div>
+                <div class="skvalue">ON</div>
+              </div>
+              <div class="skitem">
+                <div class="sklabel">Global Shadow Quality</div>
+                <div class="skvalue">High</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Crosshair Settings -->
+          <!-- Content pane for the Crosshair tab; hidden by default until its tab is clicked -->
+          <div id="t-xhair" class="tcontent">
+            <!-- Row grid laying out each crosshair-related setting item -->
+            <div class="srow">
+              <div class="skitem">
+                <div class="sklabel">Style</div>
+                <div class="skvalue">Classic Static</div>
+              </div>
+
+              <div class="skitem">
+                <div class="sklabel">Size</div>
+                <div class="skvalue">1</div>
+              </div>
+
+              <div class="skitem">
+                <div class="sklabel">Thickness</div>
+                <div class="skvalue">1</div>
+              </div>
+
+              <div class="skitem">
+                <div class="sklabel">Gap</div>
+                <div class="skvalue">-4</div>
+              </div>
+
+              <div class="skitem">
+                <div class="sklabel">Color</div>
+                <!-- Inline style sets the swatch text itself to the actual crosshair color being described -->
+                <div class="skvalue" style="color: #ffffff">White</div>
+              </div>
+            </div>
+
+            <!-- Wrapper laying out the live crosshair preview next to the share-code block -->
+            <div class="xhair-wrap">
+              <!-- Removed xmid completely from here so nothing interferes -->
+              <!-- Empty div styled purely in CSS to draw the crosshair preview graphic -->
+              <div class="xhair"></div>
+              <!-- Right-hand block presenting the copyable in-game share code -->
+              <div>
+                <!-- Small caption labeling the code block below it -->
+                <div class="xcode-label">Share Code</div>
+                <!-- Monospace-styled block containing the actual CS2 crosshair share code, line-broken for readability -->
+                <div class="xcode">
+                  CSGO-aNQn2-upV5w-<br />M8dOd-OOwcf-2pFKO
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Launch Settings -->
+          <!-- Content pane for the Launch Options tab; hidden by default until its tab is clicked -->
+          <div id="t-launch" class="tcontent">
+            <!-- Row grid laying out each launch-option setting item -->
+            <div class="srow">
+              <div class="skitem">
+                <div class="sklabel">TickRate</div>
+                <div class="skvalue">128</div>
+              </div>
+
+              <div class="skitem">
+                <div class="sklabel">Intro Skip</div>
+                <!-- Actual Steam launch-option flag that skips the intro video -->
+                <div class="skvalue">-novid</div>
+              </div>
+
+              <div class="skitem">
+                <div class="sklabel">Joystick</div>
+                <!-- Actual Steam launch-option flag that disables joystick support checks -->
+                <div class="skvalue">-nojoy</div>
+              </div>
+
+              <div class="skitem">
+                <div class="sklabel">Priority</div>
+                <!-- Actual Steam launch-option flag that sets the process to high CPU priority -->
+                <div class="skvalue">-High</div>
+              </div>
+            </div>
+            <div class="launch-box">
+              -novid&nbsp;&nbsp;-nojoy&nbsp;&nbsp;-tickrate
+              128&nbsp;&nbsp;-high<br />
+              +exec autoexec.cfg&nbsp;&nbsp;-console&nbsp;&nbsp;-freq 165
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Loads the external JavaScript file that powers the tab-switching and slider logic -->
+    <script src="script.js"></script>
   </body>
   <!-- Closes the html file completely -->
 </html>
