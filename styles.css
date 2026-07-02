@@ -85,6 +85,7 @@ body {
 /* Center link navigation list structure adjustments */
 .site-nav {
   display: flex; /* Arranges child list points horizontally side by side */
+  justify-content: center; /* Centers the navigation list items across the header row */
   gap: 24px; /* Generates a fixed grid distance wall between adjacent points */
   list-style: none; /* Strips off standard ugly default bullet list dots */
 }
@@ -95,9 +96,10 @@ body {
     --tm
   ); /* Colors text standard neutral muted gray to drop initial attention weight */
   text-decoration: none; /* Cleans off standard classic anchor hyperlink text underlines */
-  font-size: 18px; /* Standardizes clear nav reading footprint heights */
+  font-size: 14px; /* Standardizes clear nav reading footprint heights */
   font-weight: 500; /* Medium-bold stroke settings */
   transition: color 0.2s ease; /* Gracefully morphs color hues when standard mouse states interact */
+  text-transform: uppercase; /* Forces all navigation text to capitalize letters for a clean tech look */
 }
 
 /* Visual interaction trigger state when pointing at navigation text items */
@@ -107,13 +109,19 @@ body {
   ); /* Illuminates navigation text back to crisp white layout status on mouse hover */
 }
 
+.header-action {
+  display: flex; /* Arranges child elements horizontally in a row */
+  justify-content: flex-end; /* Pushes the action button to the far right side of the header */
+  align-items: center; /* Vertically centers the button within the header row */
+  gap: 16px; /* Creates a fixed spacing between the button and any adjacent elements */
+}
+
 /* The right-anchored action button wrapper anchor profile */
 .header-action__btn {
-  color: var(
-    --tm
+  color: var(--s1
   ); /* Initial muted text appearance matching other standard components */
   text-decoration: none; /* Disables anchor hyperlink underlines */
-  font-size: 18px; /* Standardizes button text label scale */
+  font-size: 15px; /* Standardizes button text label scale */
   padding: 8px 16px; /* Outer structural protective spacing perimeter molding the box dimensions */
   border-radius: 4px; /* Moderately shapes down hard box corners to deliver smooth edge curves */
   background: var(
@@ -122,17 +130,24 @@ body {
   transition:
     background 0.2s ease,
     color 0.2s ease; /* Seamlessly updates backgrounds and textual highlights on mouse hovers */
+    text-transform: uppercase; /* Forces all button text to capitalize letters for a clean tech look */
 }
 
 /* Mouse hover structural state adjustments targeting the action call header block */
 .header-action__btn:hover {
-  color: var(
-    --t
+  color: var(--t
   ); /* Flips text layout visibility metrics to clear off-white status */
   background: var(
     --ac
   ); /* Snaps background fills completely into blazing orange focus profiles */
 }
+
+.site-logo,
+.site-nav,
+.header-action {
+  flex: 1;
+}
+
 
 /* ==========================================================================
    3. HERO SECTION
@@ -739,4 +754,152 @@ h2 {
   letter-spacing: 0.04em; /* Slight letter spacing improving readability of flag strings */
   line-height: 1.9; /* Generous line height separating each launch flag onto its own readable line */
   margin-top: 20px; /* Vertical spacing separating the launch box from content above it */
+}
+
+
+.streams-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+
+.stream-item{
+       background: var(--s1);
+      border: 1px solid var(--b);
+      border-radius: 6px;
+      padding: 28px;
+      display: flex;
+        flex-direction: column;
+        gap: 18px;
+        text-decoration: none;
+        color: var(--t);
+        transition:
+          border-color 0.25s,
+          transform 0.25s;
+      }
+
+.steam-item:hover{
+  border-color: var(--ac);
+  transform: translateY(-4px);
+}
+
+.stream-item.kick-c:hover{
+  border-color: rgba(83, 252, 24, 0.22);
+}
+
+.stream-item.tiktok-c:hover{
+  border-color: rgba(255, 0, 80, 0.2);
+}
+
+.platform-row{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pdot{
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--ac);
+}
+
+.kick-c .pdot{
+  background: var(--kick);
+  box-shadow: 0 0 8px var(--kick);
+}
+
+.tiktok-c .pdot{
+  background: #ff0050;
+}
+
+.pname{
+  font-family: "JetBrains Mono", monospace;
+  font-size: 13px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.kick-c .pname{
+  color: var(--kick);
+}
+
+.tiktok-c .pname{
+  color: #ff0050;
+}
+
+.handle{
+  font-size: clamp(22px, 3vw, 34px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.stream-desc{
+  font-size: 14px;
+  color: var(--tm);
+  line-height: 1.65;
+}
+
+.sarrow{
+  font-size: 14px;
+  color: var(--tm);
+  margin-top: auto;
+  transition: transform 0.25s ease, color 0.25s ease;
+}
+
+.stream-item:hover .sarrow{
+  transform: translate(3px, -3px);
+  color: var(--t);
+}
+
+.site-footer {
+  border-top: 1px solid var(--b);
+  padding: 40px 48px;
+  max-width: 1060px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.foot-brand, 
+.foot-brand-mid, 
+.foot-brand-right {
+  flex: 1; 
+}
+
+.foot-brand {
+  color: var(--tm);
+}
+
+.foot-brand-mid {
+  text-align: center;
+}
+
+.foot-brand-right {
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
+}
+
+.foot-brand-right a {
+  color: var(--tm);
+  text-decoration: none;
+  transition: color 0.2s ease;
+  font-size: 17px;
+  
+  /* Centers the icon glyphs vertically inside their link wrapper */
+  display: inline-flex;
+  align-items: center;
+}
+
+.foot-brand-right a:hover {
+  color: var(--t);
+}
+
+/* Fix: Ensures your new custom Kick SVG changes color on hover along with the anchor link */
+.foot-brand-right a svg {
+  fill: currentColor;
+  transition: fill 0.2s ease;
 }
